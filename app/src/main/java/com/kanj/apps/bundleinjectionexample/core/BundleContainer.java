@@ -1,7 +1,6 @@
 package com.kanj.apps.bundleinjectionexample.core;
 
 import android.os.Bundle;
-import android.util.Log;
 
 /**
  * Created by Kanj Narayan on 15/03/17.
@@ -11,7 +10,6 @@ public class BundleContainer {
     private final Bundle data;
 
     public BundleContainer(Bundle savedState, Bundle intentExtras) {
-        Log.v("Kanj", "BundleContainer constructor");
         data = new Bundle();
 
         if (savedState != null) {

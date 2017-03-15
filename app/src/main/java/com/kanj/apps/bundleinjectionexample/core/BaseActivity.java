@@ -3,7 +3,6 @@ package com.kanj.apps.bundleinjectionexample.core;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import com.kanj.apps.bundleinjectionexample.dagger.ActivityComponent;
 
 /**
@@ -26,7 +25,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putAll(bundleContainer.getData());
-        Log.v("Kanj", "saved");
     }
 
     public BundleContainer getBundleContainer() {
