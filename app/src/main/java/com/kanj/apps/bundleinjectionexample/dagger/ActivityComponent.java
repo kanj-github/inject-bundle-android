@@ -8,7 +8,7 @@ import dagger.Component;
  */
 
 @PerActive
-@Component(modules = ActivityModule.class)
+@Component(modules = {ActivityModule.class, AppModule.class})
 public interface ActivityComponent {
     void inject(OtherFragment otherFragment);
 }

@@ -3,6 +3,7 @@ package com.kanj.apps.bundleinjectionexample;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class OtherFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((BaseActivity)getActivity()).getInjector().inject(this);
+        ((BaseActivity) getActivity()).getInjector().inject(this);
         mPresenter.setScene(this);
 
         mPresenter.handleActivityCreated();
@@ -43,5 +44,11 @@ public class OtherFragment extends Fragment {
 
     public void displayText(String text) {
         tv.setText(mActivity.getClass().getName() + " got text- " + text);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mPresenter.handleDestroyView();
     }
 }

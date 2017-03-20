@@ -25,6 +25,11 @@ public class MainActivity extends BaseActivity {
         return mComponent;
     }
 
+    @Override
+    public void doOnNewIntent(Intent i) {
+        // Nothing to do
+    }
+
     public void handleLaunch(View v) {
         Intent i = new Intent(this, OtherActivity.class);
         i.putExtra(OtherActivity.ARG_NAME, "string argument");

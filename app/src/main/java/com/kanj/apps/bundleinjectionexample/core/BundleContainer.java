@@ -12,12 +12,19 @@ public class BundleContainer {
     public BundleContainer(Bundle savedState, Bundle intentExtras) {
         data = new Bundle();
 
+        if (intentExtras != null) {
+            data.putAll(intentExtras);
+        }
+
+        // Add savedState data later to make sure that it overrides possibly outdated intent data.
         if (savedState != null) {
             data.putAll(savedState);
         }
+    }
 
-        if (intentExtras != null) {
-            data.putAll(intentExtras);
+    public void addBundleData(Bundle bundle) {
+        if (bundle != null) {
+            data.putAll(bundle);
         }
     }
 
