@@ -1,8 +1,6 @@
 package com.kanj.apps.bundleinjectionexample.dagger;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import com.kanj.apps.bundleinjectionexample.OtherActivity;
 import com.kanj.apps.bundleinjectionexample.core.BaseActivity;
 import com.kanj.apps.bundleinjectionexample.core.BundleContainer;

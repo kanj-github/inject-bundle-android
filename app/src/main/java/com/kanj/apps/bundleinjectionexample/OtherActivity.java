@@ -2,7 +2,6 @@ package com.kanj.apps.bundleinjectionexample;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import com.kanj.apps.bundleinjectionexample.core.BaseActivity;
 import com.kanj.apps.bundleinjectionexample.dagger.ActivityComponent;
 import com.kanj.apps.bundleinjectionexample.dagger.ActivityModule;
@@ -42,7 +41,10 @@ public class OtherActivity extends BaseActivity {
 
             // I do not know how reliable this publish shit is. What will happen if fragment view is
             // destroyed in background and the presenter unsubscribes?
-            // Answer- In that case BaseActivity would already have put the new data in saved bundle.
+            // Answer- In that case activity would get onCreate followed by onNewIntent.
+            // Fragment gets onActivityCreated before onNewIntent and therefore it's presenter has
+            // subscribed again before onNewIntent callback in activity.
+            // Note that the savedInstance and intent extras in onCreate have the old data.
         }
     }
 }

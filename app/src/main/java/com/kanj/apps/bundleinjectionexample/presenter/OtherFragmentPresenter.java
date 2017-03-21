@@ -1,7 +1,6 @@
 package com.kanj.apps.bundleinjectionexample.presenter;
 
 import android.os.Bundle;
-import android.util.Log;
 import com.kanj.apps.bundleinjectionexample.OtherActivity;
 import com.kanj.apps.bundleinjectionexample.OtherFragment;
 import com.kanj.apps.bundleinjectionexample.core.BundleContainer;

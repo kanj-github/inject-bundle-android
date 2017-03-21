@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import com.kanj.apps.bundleinjectionexample.OtherActivity;
 import com.kanj.apps.bundleinjectionexample.dagger.ActivityComponent;
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;
